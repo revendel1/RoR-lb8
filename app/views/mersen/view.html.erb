@@ -1,0 +1,27 @@
+<h1>Mersen#view</h1>
+ <p>Найденные числа Мерсена</p>
+<p id="count">
+    <% if @result.empty? %>
+        <%= 'Ошибка ввода' %>
+    <% else %>
+        <%= "Количество: #{@count}"%>
+    <% end %>
+</p>
+<p id="res_table"></p>
+<table border="1">
+    <tr>
+        <th>Номер</th>
+        <th>Число</th>
+    </tr>
+    <% @result.each do |row| %>
+    <tr>
+        <% row.each do |value| %>
+        <td>
+            <%= value %>
+        </td>
+        <% end %>
+    </tr>
+    <% end %>
+</table>
+
+<p> <%= link_to "Ввести другое число", :mersen_input %> </p>
